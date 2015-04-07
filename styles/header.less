@@ -1,0 +1,41 @@
+@import 'variables.less';
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    nav.navbar {
+        margin-bottom: 0;
+        background-color: @header-bgcolor;
+        .navbar-header {
+            width: 100%;
+            font-family: 'montserratbold';
+            font-size: 32px;
+            color: @header-txtcolor;
+            a {
+                color: @header-txtcolor;
+            }
+            img {
+                max-height: 35px;
+            }
+            ul { 
+                margin: 5px 0 0;
+                li {
+                    line-height:1.2;
+                    font-size: 21px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    color: @footer-txtcolor;
+}
+
+header, footer {
+    nav .container-fluid {
+        padding: 0;
+    }
+}

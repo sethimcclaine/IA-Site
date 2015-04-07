@@ -1,0 +1,100 @@
+@import 'variables.less';
+html {
+    body {
+
+        h1 {
+            font-family: 'montserratbold';
+            font-size: 60px;
+            &.large {
+                font-size: 72px;
+            }
+        }
+        h2 {
+            font-size: 40px;
+            font-family: 'montserratbold';
+        }
+        h3 {
+            font-size: 34px;
+            font-family: 'montserratlight';
+        }
+        h4 {
+            font-family: 'montserratbold';
+            font-size: 32px;
+            &.small {
+                font-size: 24px;
+            }
+        }
+        p {
+            font-family: "Helvetica Neue";
+            font-size: 24px;
+        }
+        
+        span.glyphicon {
+            font-size: 40px;
+        }
+        textarea,
+        input {
+            width: 100%;
+            background-color: @input-bgcolor;
+            color: @input-txtcolor;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            font-family: "Helvetica Neue";
+
+            &::-webkit-input-placeholder {
+                color: @input-placeholder-txtcolor;
+            }
+            &:-moz-placeholder { 
+                color: @input-placeholder-txtcolor;
+            }
+            &::-moz-placeholder {  
+                color: @input-placeholder-txtcolor;
+            }
+            &:-ms-input-placeholder {  
+                color: @input-placeholder-txtcolor;
+            }
+        }
+        
+        button {
+            margin-top: 5px;
+            background: inherit;
+            width: 100%;
+            border: solid white 1px;
+            font-size: 24px;
+        }
+
+
+
+        .container-fluid {
+            padding: 80px 0;
+        }
+/*
+        .light-on-dark {
+            color: @lod-txtcolor;
+            background-color: @lod-bgcolor;
+        }
+        .light-on-light {
+            color: @lol-txtcolor;
+            background-color: @lol-bgcolor;
+        }
+        .dark-on-light {
+            color: @dol-txtcolor;
+            background-color: @dol-bgcolor;
+        }
+*/
+        font-family: montserrat;
+        .container-fluid { /* set a max-width for horizontal fluid layout and make it centered */
+          max-width: @max-width;
+        }
+        /* keep all cols in rows the same height */
+        .row {
+            display: table;
+            [class*="col-"] {
+                float: none;
+                display: table-cell;
+                vertical-align: top;
+            }
+        }
+    }
+}
