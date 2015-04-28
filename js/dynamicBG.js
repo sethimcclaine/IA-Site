@@ -90,40 +90,34 @@ var dynamicBG = function(divClass, itemCount, color) {
         };
         this.update = function() {
             //if we are out of the screen x limits by 5 or more pix
-            if (this.x > winWidth + 5) {
-                this.right = 0;
-            } else if (this.x < 0 - 5) {
-                this.right = 1; 
+            if (this.x > winWidth + 5 || this.x < 0 - 5) {
+                this.xSpeed = this.xSpeed * -1;
             }
             //if we are out of the screen y limits by 5 or more pix
-            if (this.y > winHeight + 5) {
-                this.down = 0;
-            } else if (this.y < 0 -5) {
-                this.down = 1;
+            if (this.y > winHeight + 5 || this.y < 0 -5) {
+                this.ySpeed = this.ySpeed * -1;
             } 
-            //update x movement
-            if(this.right) {
-                this.x += this.xSpeed;
-            } else {
-                this.x -= this.xSpeed;
-            }
-            //update y movement
-            if(this.down) {
-                this.y += this.ySpeed;
-            } else {
-                this.y -= this.ySpeed;
-            }
+            //update positions
+            this.x += this.xSpeed;
+            this.y += this.ySpeed;
+
             this.draw();
         };
 
         this.x= getRandomInt(0, winWidth + 10) - 5;
         this.xSpeed = getRandomInt(1, 6);
-        this.right = getRandomInt(0, 2);
         this.y= getRandomInt(0, winHeight + 10) - 5;
         this.ySpeed = getRandomInt(1, 6);
-        this.down = getRandomInt(0, 2);
         this.radius= getRandomInt(5,20);
         this.siblings = [];
+
+        //randomize which direction they move
+        if(getRandomInt(0, 2)) {
+            this.xSpeed = this.xSpeed * -1;
+        }
+        if(getRandomInt(0, 2)) {
+            this.ySpeed = this.ySpeed * -1;
+        }
     }
 
     function init() {
@@ -132,9 +126,13 @@ var dynamicBG = function(divClass, itemCount, color) {
     }
 
 //Event Listeners
+//*
     $(window).scroll( function() {
         update();
     });
+/*/
+    setInterval(update, 100);
+//*/
 
     $(window).resize( function(){
         console.log('resizing');
