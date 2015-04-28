@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
     $page = $_GET['page'];
     $pages = array('expertise', 'products', 'company', 'contact');
@@ -5,7 +6,6 @@
         $page = 'expertise';
     }
 ?>
-
 <html>
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" type="text/javascript"></script>
@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="js/dynamicBG.js" ></script>
+        <script src="js/<?php echo $page; ?>.js" ></script>
         <!-- Our styles -->
         <!--link rel="stylesheet" href="fonts/webfontkit/stylesheet.css" /-->
 
@@ -20,7 +22,6 @@
         <link rel="stylesheet/less" type="text/css" href="styles/globals.less" />
         <link rel="stylesheet/less" type="text/css" href="styles/app.less" />
         <link rel="stylesheet/less" type="text/css" href="styles/header.less" />
-        <link rel="stylesheet/less" type="text/css" href="styles/expertise.less" />
         <link rel="stylesheet/less" type="text/css" href="styles/<?php echo $page; ?>.less" />
         <!-- lesscss.js -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js"></script>

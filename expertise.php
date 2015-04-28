@@ -9,11 +9,10 @@
                     <div class="col-xs-7 text">
                         <img alt="InspiringApps Logo" class="img-responsive center-block" src="/images/tmp_apptype_icons.png">
                         <h1 class="large">We're making it<br/>Our Buisness</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">  
-                           <h3>We have expertise developing for iOS, Android, Windows and HTML5 platforms, and will help you decide if native, web, or hybrid apps make the most sense for your project.</h3>
+
+                           <p>We have expertise developing for iOS, Android, Windows and HTML5 platforms, and will help you decide if native, web, or hybrid apps make the most sense for your project.</p>
+
+                           <p>We have expertise developing for iOS, Android, Windows and HTML5 platforms, and will help you decide if native, web, or hybrid apps make the most sense for your project.</p>
                     </div>
                 </div>
             </div>
@@ -34,6 +33,7 @@
         </div>
     </div>
     <div class="top-layer">
+        <div class="skewed top"> </div>
         <div class="discovery">
             <div class="container-fluid">
                 <div class="row">
@@ -105,5 +105,6 @@
                 </div>
             </div>
         </div>
+        <div class="skewed bottom"> </div>
     </div>
 </div>

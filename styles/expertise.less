@@ -9,6 +9,9 @@
         background-color: @expertise-primary-bgcolor;
         position: fixed;
         width: 100%;    
+        canvas {
+            position: absolute;
+        }
         .our-buisness .row div.text {
             vertical-align: middle;
         }
@@ -17,8 +20,36 @@
     }
     .top-layer {
         position: relative;
-        top: 700px;
-        margin-bottom: 700px;
+        top: 745px;
+        z-index: 200;
+        margin-bottom: 1200px;
         background-color: @expertise-secondary-bgcolor;
+        .skewed {
+            height: 75px;
+            background: @expertise-secondary-bgcolor;
+            position: relative;
+            &.top {
+                top: -25px;
+                -webkit-transform: skewY(-2deg);
+                -moz-transform: skewY(-2deg);
+                -ms-transform: skewY(-2deg);
+                -o-transform: skewY(-2deg);
+                transform: skewY(-2deg); 
+            }
+            &.bottom {
+                bottom: -25px;
+                -webkit-transform: skewY(2deg);
+                -moz-transform: skewY(2deg);
+                -ms-transform: skewY(2deg);
+                -o-transform: skewY(2deg);
+                transform: skewY(2deg); 
+            }
+        }
     }
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
+    z-index: 100;
 }
