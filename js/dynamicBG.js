@@ -17,8 +17,8 @@ var dynamicBG = function(divClass, itemCount, color) {
         $('#dynamicBG').remove();
 
         //Add bg canvas
-        $('.' + divClass).prepend('<canvas id="dynamicBG" width="' + maxWidth + '" height="' + maxHeight + '" style="border:1px solid #000000;"></canvas>');
-
+        $(divClass).prepend('<canvas id="dynamicBG" width="' + maxWidth + '" height="' + maxHeight + '" style="border:1px solid #000000;"></canvas>');
+        $('canvas').css('position', 'fixed').css('opacity','0.5');
         //Set vars for new canvas
         canvas = document.getElementById("dynamicBG");
         ctx = canvas.getContext("2d");
@@ -105,9 +105,9 @@ var dynamicBG = function(divClass, itemCount, color) {
         };
 
         this.x= getRandomInt(0, winWidth + 10) - 5;
-        this.xSpeed = getRandomInt(1, 6);
+        this.xSpeed = getRandomInt(0, 6);
         this.y= getRandomInt(0, winHeight + 10) - 5;
-        this.ySpeed = getRandomInt(1, 6);
+        this.ySpeed = getRandomInt(0, 6);
         this.radius= getRandomInt(5,20);
         this.siblings = [];
 
@@ -127,11 +127,12 @@ var dynamicBG = function(divClass, itemCount, color) {
 
 //Event Listeners
 //*
-    $(window).scroll( function() {
+    //$(window).scroll(function() {
+    $(window).mousemove( function() {
         update();
     });
 /*/
-    setInterval(update, 100);
+    setInterval(update, 50);
 //*/
 
     $(window).resize( function(){
